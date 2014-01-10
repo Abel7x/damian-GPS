@@ -7,7 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<CLLocationManagerDelegate,NSURLConnectionDelegate>{
+    CLLocationManager *locationManager;
+    NSString *lat;
+    NSString *lon;
+    NSMutableData *_responseData;
+    NSURLConnection *conn;
+
+}
+
+- (IBAction)iniciarServicio:(id)sender;
+- (IBAction)detenerServicio:(id)sender;
+
 
 @end
